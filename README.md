@@ -54,9 +54,9 @@ To test and/or watch for any possible errors, you can use [Postman](https://go.p
 
 ### Credits
 
-[HN](https://news.ycombinator.com/newcomments)
-[Google](http://www.google.com)
-[Hacker News API](https://github.com/HackerNews/API)
+*[HN](https://news.ycombinator.com/newcomments)
+*[Google](http://www.google.com)
+*[Hacker News API](https://github.com/HackerNews/API)
 
 ### Repository
 
