@@ -39,27 +39,29 @@ class ItemController extends AbstractController
         // get comments in db
         $repo = new CommentsRepository ($managerRegistry);
         $comment = $repo->findOneBySomeField('id', $itemId);
-
-        var_dump($comment);
-        die;
         
-        $detail = [];
-        $response = new Response();
-        foreach ($comment as $item)
+        $ids = explode (",", $comment[0]['kids']);
+        $details = [];
+        foreach ($ids as $item)
         {
+            $cleanId = preg_replace ('/[^0-9]/', '', $item);
+
             // first fetch parent details
-            $detail[] = $this->client->request(
+            $detail = $this->client->request(
                 'GET',
-                $this->baseUri . $this->itemEndpoint . '/' . $item['id'] . '.json'
+                $this->baseUri . $this->itemEndpoint . '/' . $cleanId . '.json'
             );
 
             // Check if parent found
-            $statusCode = $details->getStatusCode();
+            $statusCode = $detail->getStatusCode();
             
             if ($statusCode === 200) {
+                $details[] = $detail->getContent();
+
+                $response = new Response();
                 $response->headers->set('Content-Type', 'application/json');
                 $response->headers->set('Access-Control-Allow-Origin', '*');
-                $response = json_decode ($detail->getContent(), true);
+                $response = $response->setContent (json_encode ($details));
             }
         }
 

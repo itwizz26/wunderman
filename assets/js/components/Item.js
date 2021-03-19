@@ -14,7 +14,9 @@ class Item extends Component {
     }
     
     getAllComment() {
-        axios.get(`http://localhost:8000/item/{id}`).then(res => {
+        const itemId = this.props.match.params.itemId;
+        console.log(itemId);
+        axios.get(`http://localhost:8000/item/${itemId}`).then(res => {
             const comment = res.data;
             this.setState({ comment, loading: false });
         })
@@ -36,11 +38,13 @@ class Item extends Component {
                         ) : (
                             <div className={'row'}>
                                 {this.state.comment.map ((item, i) =>
+
+                                    {console.log(item)}
                                     
-                                    <div className="col-md-12 row-block" key={i++}>
+                                    ,<div className="col-md-12 row-block" key={i++}>
                                         <div className="media">
                                             <div className="media-body">
-                                                {/* <p>
+                                                <p>
                                                     <a href={'/vote/' + comment.kids.JSON.parse (id) + '&how=up&goto=news'}><img className="arrow" src={Arrow} alt="Arrow" /></a>
                                                     <span className="grey-small">
                                                         <a href={'/user/' + comment.kids.JSON.parse (by)} className="link">{comment.kids.JSON.parse (by)}</a>&nbsp;
@@ -51,7 +55,7 @@ class Item extends Component {
                                                 </p>
                                                 <p>
                                                     {comment.kids.JSON.parse (text)}
-                                                </p> */}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
