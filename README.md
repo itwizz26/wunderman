@@ -60,12 +60,12 @@ To test and/or watch for any possible errors, you can use [Postman](https://go.p
 
 ### Repository
 
-The code base may be found here on [GitHub](https://github.com/itwizz26/wunderman)
+The code base may be found here on [GitHub](https://github.com/itwizz26/wunderman).
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ### Developer
 
-Application crafted and perfected by [itwizz26](https://github.com/itwizz26)
+Application crafted and perfected by [itwizz26](https://github.com/itwizz26).
