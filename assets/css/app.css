@@ -1,0 +1,180 @@
+.row-section {
+    float:left; 
+    width:100%;
+}
+.container {
+    padding: 10px;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    background-color: #f6f6ef;
+}
+.row-section h2 {
+    float:left; width:100%; color:#000; margin-bottom:30px; font-size: 14px;
+}
+.row-section h2 span {
+    font-family: 'Libre Baskerville', serif; display:block; font-size:45px; text-transform:none; margin-bottom:20px; margin-top:30px;font-weight:700;
+}
+.row-section h2 a {
+    color:#d2abce;
+}
+.row-section .row-block ul {
+    margin:0; padding:0;
+}
+.row-section .row-block ul li {
+    list-style:none; margin-bottom:20px;
+}
+.row-section .row-block ul li:last-child {
+    margin-bottom:0;
+}
+.row-section .row-block ul li:hover {
+    cursor:grabbing;
+}
+.row-section .row-block .media {
+    padding: 1px; color: #000;
+    margin-bottom: 2px;
+}
+.row-section .row-block .media .no-underline {
+    text-decoration: none;
+}
+.row-section .row-block .media a:hover.no-underline {
+    color: #000;
+}
+.row-section .row-block .media .grey-small {
+    color: #828282;
+    font-size: 10px;
+}
+.row-section .row-block .media .number {
+    width: 20px;
+    font-size: 12px;
+    display: inline-block;
+}
+.row-section .row-block .media .pad-left {
+    padding-left: 30px;
+}
+.row-section .row-block .media .pad-left-small {
+    padding-left: 10px;
+}
+.row-section .media .media-left img {
+    width:75px;
+}
+.row-section .media .media-body p {
+    margin: 0;
+}
+.row-section .media .media-body h4 {
+    color: #6b456a; font-size: 18px; font-weight: 600; margin-bottom: 0;
+}
+.row-section .media .media-body .arrow {
+    margin-bottom: 3px;
+}
+.row-section .link {
+    color: #828282;
+}
+.row-section .more-link {
+    padding-left: 30px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+}
+.fa-spin {
+    margin: 0 auto;
+}
+.black {
+    color: #000;
+}
+body {
+    font-family: Verdana, Geneva, sans-serif !important;
+    font-size: 13px !important;
+    color: #828282 !important;
+}
+.main-container {
+    width: 83%;
+    margin: 5px auto;
+}
+.body-section {
+    background-color: #f6f6ef;
+}
+.bg-orange {
+    color: #000 !important;
+    background-color: #ff6600 !important;
+}
+.navbar-expand-lg {
+    margin: 0 !important;
+    padding: 0 3px !important;
+}
+.navbar-expand-lg .navbar-collapse {
+    line-height: 0;
+}
+.navbar-nav .nav-link {
+    padding: 0;
+}
+.navbar-dark .navbar-brand {
+    color: #000 !important;
+    font-weight: bolder;
+    font-size: 13px;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+}
+.logo {
+    width: 20px;
+    border: 1px solid white;
+}
+.collapse.navbar-collapse {
+    display: inline-block;
+}
+.collapse.navbar-collapse .navbar-nav {
+    list-style: none;
+    margin-top: -1px;
+    padding: 0;
+}
+.collapse.navbar-collapse .navbar-nav .nav-item .nav-link {
+    color: #000;
+    text-decoration: none;
+}
+.collapse.navbar-collapse .navbar-nav .nav-item a:active.nav-link,
+.collapse.navbar-collapse .navbar-nav .nav-item a:target.nav-link {
+    color: white;
+}
+.navbar .navbar-login {
+    float: right;
+    margin: 4px;
+    color: #000;
+    text-decoration: none;
+}
+.footSection {
+    width: 100%;
+    color: #000;
+    text-align: center;
+    display: inline-block;
+    border-top: 2px solid #ff6600;
+}
+.footSection p {
+    padding: 10px;
+    margin-bottom: 0;
+}
+.footSection ul {
+    font-size: 11px;
+    list-style: none;
+    display: inline-block;
+}
+.footSection ul li {
+    padding: 0 2px;
+    display: inline-block;
+}
+.footSection ul li a {
+    color: #000;
+    text-decoration: none;
+}
+.footSection .api {
+    color: #828282;
+}
+.footSection .search {
+    display: block;
+}
+.footSection .search span {
+    color: #828282;
+}
+.footSection .search input {
+    width: 135px;
+    padding: 0;
+}

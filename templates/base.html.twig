@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+
+        {{ encore_entry_link_tags('bootstrap') }}
+        {{ encore_entry_link_tags('librefont') }}
+        {{ encore_entry_link_tags('awesome') }}
+    {% endblock %}
+    
+    <link href="{{ asset('build/images/favicon.ico') }}" rel="shortcut icon" />
+    {# <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" /> #}
+</head>
+<body>
+{% block body %}{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
+</html>
