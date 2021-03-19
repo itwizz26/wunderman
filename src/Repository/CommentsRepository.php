@@ -19,6 +19,16 @@ class CommentsRepository extends ServiceEntityRepository
         parent::__construct($registry, Comments::class);
     }
 
+    public function findOneBySomeField ($field1, $value1): ?Comments
+    {
+        return $this->createQueryBuilder('n')
+            ->where ('n.' . $field1 . ' = :val1')
+            ->setParameter('val1', $value1)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
     /**
      * @return array
      */

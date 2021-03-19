@@ -38,56 +38,31 @@ class ItemController extends AbstractController
     {
         // get comments in db
         $repo = new CommentsRepository ($managerRegistry);
-        $details = $repo->findOneBy(['id' => $itemId]);
-        
-        // var_dump($details);
-        // die;
+        $comment = $repo->findOneBySomeField('id', $itemId);
 
-        foreach ($allComms as $item)
+        var_dump($comment);
+        die;
+        
+        $detail = [];
+        $response = new Response();
+        foreach ($comment as $item)
         {
             // first fetch parent details
-            $parent = $this->client->request(
+            $detail[] = $this->client->request(
                 'GET',
                 $this->baseUri . $this->itemEndpoint . '/' . $item['id'] . '.json'
             );
 
             // Check if parent found
-            $statusCode = $parent->getStatusCode();
+            $statusCode = $details->getStatusCode();
             
             if ($statusCode === 200) {
-                $parentDetails = json_decode ($parent->getContent(), true);
-                $comments[$item['id']] = $parentDetails['title'];
-                $kids = explode (",", $item['kids']);
-
-                // loop comment keys
-                foreach ($kids as $key => $value)
-                {
-                    // get comment details
-                    $kid = $this->client->request(
-                        'GET',
-                        $this->baseUri . $this->itemEndpoint . '/' . preg_replace ('/[^0-9]/', '', $value) . '.json'
-                    );
-
-                    $statusCode = $kid->getStatusCode();
-                    if ($statusCode === 200) {
-                        $kidItem = $kid->getContent();
-
-                        // skip blanks
-                        if (!empty ($kidItem))
-                        {
-                            $comments['kids'][] = $kidItem;
-                            continue;
-                        }
-                    }
-                }
+                $response->headers->set('Content-Type', 'application/json');
+                $response->headers->set('Access-Control-Allow-Origin', '*');
+                $response = json_decode ($detail->getContent(), true);
             }
         }
 
-        $response = new Response();
-        $response->headers->set('Content-Type', 'application/json');
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-
-        $response->setContent (json_encode ($comments));
         return $response;
     }
 }
